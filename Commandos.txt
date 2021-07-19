@@ -1,0 +1,18 @@
+docker compose up -d --scale docker-hesk=1
+
+
+CREATE USER 'heskDBUser'@'%' IDENTIFIED BY 'Qqf-S4Ka8!KB5u93_Ty3y$EgNdN9@nfu';
+
+HeskAdminFduxe
+B9Ebr!MLwY68Y-QkVrWQ_9eftMmzL$Qq
+
+root
+MvD2KHNcNrj5rW-4pNEL_PVKnLYx3
+
+
+docker compose build
+
+docker compose up -d --scale docker-hesk=[cantidad deseada de nodos]
+
+docker compose up -d --scale docker-hesk=5
+

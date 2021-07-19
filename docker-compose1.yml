@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  docker-mariadb:
+    image: mariadb:rc-focal
+    volumes:
+      - ./mariadb/dump/:/docker-entrypoint-initdb.d/
+    restart: always
+    ports:
+      - 3310:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: MvD2KHNcNrj5rW-4pNEL_PVKnLYx3
+    container_name: mariadb_hesk
+
+  docker-hesk:
+    build: hesk/.
+    restart: always
+
+  docker-nagios:
+    image: manios/nagios:latest
+    ports:
+      - 8088:80
+      - 44300:443
+
+  docker-lb:
+    build: nginx/.
+    restart: always
+    container_name: lb-hesk
+    depends_on:
+      - docker-hesk
+    ports:
+      - 8080:4000

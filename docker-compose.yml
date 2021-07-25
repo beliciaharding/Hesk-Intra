@@ -33,8 +33,8 @@ services:
     depends_on:
       - docker-hesk
     ports:
-      - 8080:4000
-      - 44300:4001
+      - 80:4000
+      - 443:4001
     networks:
       hesk:
           #ipv4_address: 172.20.69.2

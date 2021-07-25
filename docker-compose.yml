@@ -52,6 +52,7 @@ services:
       - '--web.console.templates=/usr/share/prometheus/consoles'
     ports:
       - 9090:9090
+    restart: always
     networks:
       hesk:
           #ipv4_address: 172.20.69.3

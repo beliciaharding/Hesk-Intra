@@ -14,7 +14,7 @@ services:
     container_name: mariadb_hesk
     networks:
       hesk:
-          ipv4_address: 172.20.69.10
+          #ipv4_address: 172.20.69.10
 
   docker-hesk:
     build: hesk/.
@@ -23,7 +23,7 @@ services:
       - ./hesk/:/var/www/html/
     networks:
       hesk:
-          ipv4_address: 172.20.69.101
+          #ipv4_address: 172.20.69.101
 ##  command: "chmod 666 ./hesk_settings.inc.php && chmod 777 ./attachments && chmod 777 ./cache"
 
   docker-lb:
@@ -37,7 +37,7 @@ services:
       - 44300:4001
     networks:
       hesk:
-          ipv4_address: 172.20.69.2
+          #ipv4_address: 172.20.69.2
 
   prometheus:
     image: prom/prometheus
@@ -54,7 +54,7 @@ services:
       - 9090:9090
     networks:
       hesk:
-          ipv4_address: 172.20.69.3
+          #ipv4_address: 172.20.69.3
 
   grafana:
     image: grafana/grafana
@@ -72,7 +72,7 @@ services:
     restart: always
     networks:
       hesk:
-          ipv4_address: 172.20.69.4
+          #ipv4_address: 172.20.69.4
 
   node-exporter:
     image: prom/node-exporter
@@ -90,7 +90,7 @@ services:
     restart: always
     networks:
       hesk:
-          ipv4_address: 172.20.69.5
+          #ipv4_address: 172.20.69.5
 
 
   cadvisor:
@@ -105,7 +105,7 @@ services:
     restart: always
     networks:
       hesk:
-          ipv4_address: 172.20.69.6
+          #ipv4_address: 172.20.69.6
 
 networks:
   hesk:

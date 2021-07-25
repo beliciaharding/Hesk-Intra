@@ -16,3 +16,6 @@ docker compose up -d --scale docker-hesk=[cantidad deseada de nodos]
 
 docker compose up -d --scale docker-hesk=5
 
+
+
+RUN cd /www/hesk && chmod 666 hesk_settings.inc.php && chmod 777 attachments  && chmod 777 cache 

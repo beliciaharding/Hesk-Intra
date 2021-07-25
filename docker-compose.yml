@@ -34,7 +34,7 @@ services:
       - docker-hesk
     ports:
       - 80:4000
-      - 443:4001
+      #- 443:4001
     networks:
       hesk:
           #ipv4_address: 172.20.69.2
